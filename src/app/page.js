@@ -1,9 +1,7 @@
-
-
 const Home = () => {
   return (
     <section>
-     ffkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+      
     </section>
   )
 }
