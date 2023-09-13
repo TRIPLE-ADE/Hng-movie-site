@@ -39,12 +39,12 @@ const { title, backdrop_path, overview, popularity } = heroMovieData;
   return (
     <div>
         <section className={`${style.paddingX} flex flex-col gap-3 items-start justify-center h-screen pt-10`} style={backgroundImageStyle}>
-            <h1 className='text-4xl font-bold text-white sm:text-5xl sm:max-w-lg'>{ title }</h1>
-            <div className='flex items-center gap-5'>
+            <h1 className='text-4xl font-bold text-white sm:text-5xl sm:max-w-lg mt-10'>{ title }</h1>
+            <div className='flex items-center gap-5 text-white'>
              <MovieRating {...{ popularity }} />
             </div>
             <p className='text-sm font-medium text-white sm:max-w-lg'>{ overview }</p>
-            <button className='flex items-center gap-1 p-2 text-xs text-white uppercase bg-red-700 rounded-md'>
+            <button className='flex items-center gap-1 p-2 text-xs text-white uppercase bg-rose-700 rounded-md'>
               <Image src='/Play.svg' width={20} height={20} alt='play icon' style={{width: 'auto', height: 'auto'}}/>
               watch trailer
             </button>

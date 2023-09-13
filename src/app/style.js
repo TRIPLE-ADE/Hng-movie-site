@@ -16,7 +16,7 @@ const styles = {
   };
   
   export const layout = {
-    section: `grid grid-col-2 sm:grid-col-4 md:grid-col-5 ${styles.paddingY}`,
+    section: `grid grid-col-2 sm:grid-col-4 md:grid-col-5 ${styles.paddingY} ${styles.paddingX}`,
   };
   
   export default styles;
