@@ -14,7 +14,7 @@ const SearchInput = ({ value, onChange, onSearch }) => {
         <button 
           className="absolute p-2 ml-2 text-center text-white rounded-md right-1 focus:outline-none" 
           onClick={onSearch}>
-          <Image src="/Search.svg" width={20} height={10} alt="search icon" />
+          <Image src="/Search.svg" width={20} height={20} alt="search icon" />
         </button>   
       </div>
     );

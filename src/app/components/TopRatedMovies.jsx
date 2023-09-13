@@ -4,24 +4,39 @@ const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 async function getStaticProps() {
-  const response = await fetch(`${baseUrl}movie/top_rated?api_key=${apiKey}`)
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  const data = await response.json();
-  return data.results; 
+  try {
+    const response = await fetch(`${baseUrl}movie/top_rated?api_key=${apiKey}`);
+    
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    
+    const data = await response.json();
+    return data.results;
+  } catch (error) {
+    console.error('Error fetching top-rated movies:', error);
+    return []; // Return an empty array in case of an error
+  }
 }
 
 const TopRated = async () => {
-    const TopRatedMovies = await getStaticProps();
-    const TopTenRated = TopRatedMovies.slice(0, 10);
+  const topRatedMovies = await getStaticProps();
+
+  if (topRatedMovies.length === 0) {
+    return <div>Error fetching top-rated movies. Please try again later.</div>;
+  }
+
+  const topTenRated = topRatedMovies.slice(0, 10);
+
   return (
     <div>
-        <div className="grid grid-cols-5">
-        {TopTenRated.map(movie => (
-          <Movie movie={movie} />
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5">
+        {topTenRated.map((movie) => (
+          <Movie {...{ movie }} key={movie.id} />
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TopRated
+export default TopRated;
