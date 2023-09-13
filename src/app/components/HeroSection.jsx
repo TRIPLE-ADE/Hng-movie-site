@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import style from '@/app/style'
 import Loading from '@/app/loading'
+import MovieRating from './MovieRating';
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
@@ -40,14 +41,7 @@ const { title, backdrop_path, overview, popularity } = heroMovieData;
         <section className={`${style.paddingX} flex flex-col gap-3 items-start justify-center h-screen pt-10`} style={backgroundImageStyle}>
             <h1 className='text-4xl font-bold text-white sm:text-5xl sm:max-w-lg'>{ title }</h1>
             <div className='flex items-center gap-5'>
-              <div className='flex items-center gap-2'>
-                <Image src='/imdb.svg' width={20} height={20} alt='IMDB icon' style={{width: 'auto', height: 'auto'}}/>
-                <p className='text-xs text-white'>{ Math.floor(Number(popularity)) }/100</p>
-              </div>
-              <div className='flex items-center gap-2'>
-                <Image src='/tomato.svg' width={20} height={20} alt='Tomatoes icon' style={{width: 'auto', height: 'auto'}}/>
-                <p className='text-xs text-white'>{ Math.floor(Number(popularity)) }%</p>
-              </div>
+             <MovieRating {...{ popularity }} />
             </div>
             <p className='text-sm font-medium text-white sm:max-w-lg'>{ overview }</p>
             <button className='flex items-center gap-1 p-2 text-xs text-white uppercase bg-red-700 rounded-md'>
