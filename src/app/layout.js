@@ -1,9 +1,12 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
 import styles from './style'
 import Header from './components/Header'
 
-const inter = Inter({ subsets: ['latin'] })
+const dm_sans = DM_Sans({ 
+  weight: ['400', '500', '700'],
+  subsets: ['latin'] 
+})
 
 export const metadata = {
   title: 'Movie Site',
@@ -13,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={dm_sans.className}>
           <Header />
           <main className={`${styles.boxWidth} min-h-screen`}>
             {children}

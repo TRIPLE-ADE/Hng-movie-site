@@ -11,7 +11,7 @@ const MovieRating = ( { popularity } ) => {
           alt="IMDB icon"
           style={{ width: "auto", height: "auto" }}
         />
-        <p className="text-xs text-white">
+        <p className="text-xs ">
           {Math.floor(Number(popularity))}/100
         </p>
       </div>
@@ -23,7 +23,7 @@ const MovieRating = ( { popularity } ) => {
           alt="Tomatoes icon"
           style={{ width: "auto", height: "auto" }}
         />
-        <p className="text-xs text-white">{Math.floor(Number(popularity))}%</p>
+        <p className="text-xs ">{Math.floor(Number(popularity))}%</p>
       </div>
     </>
   );
