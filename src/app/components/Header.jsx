@@ -5,7 +5,7 @@ import SearchInput from './SearchInput';
 
 const Header = () => {
   return (
-    <header className={`${styles.padding} ${styles.boxWidth}`}>
+    <header className={`absolute ${styles.padding} ${styles.boxWidth}`}>
       <nav className={`${styles.headerFlex}`}>
         <Link href="/" className="text-xl font-bold text-white">
             <Image src="/Logo.svg" width={80} height={80} alt="logo"  style={{ width: 'auto', height: 'auto' }} priority={true}/>
