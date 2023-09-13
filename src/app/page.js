@@ -1,4 +1,4 @@
-import TopRated from "./components/TopRated"
+import TopRated from "./components/TopRatedMovies"
 
 const Home = async () => {
   return (
