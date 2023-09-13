@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
           <Header />
-          <main className={`${styles.boxWidth} min-h-screen ${styles.padding}`}>
+          <main className={`${styles.boxWidth} min-h-screen`}>
             {children}
           </main>
       </body>

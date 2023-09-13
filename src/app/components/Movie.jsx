@@ -7,7 +7,7 @@ const Movie = ({ movie }) => {
     <Link key={id} href={`/movies/${id}`}>
       <div>
         <Image
-          src={`https://image.tmdb.org/t/p/w200${poster_path}`}
+          src={`https://image.tmdb.org/t/p/original${poster_path}`}
           alt={title}
           width={500}
           height={500}
