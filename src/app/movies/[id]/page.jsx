@@ -1,4 +1,4 @@
-import React from 'react'
+import SideBar from "@/app/components/SideBar";
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
@@ -22,7 +22,12 @@ async function getMoviesDetails(id) {
 const page = async ({ params : id }) => {
     const movieDetails = await getMoviesDetails(id)
   return (
-    <div>page</div>
+    <>
+        <SideBar />
+        <section>
+          
+        </section>
+    </>
   )
 }
 
