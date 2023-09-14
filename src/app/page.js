@@ -1,3 +1,4 @@
+import Footer from "./components/Footer"
 import HeroSection from "./components/HeroSection"
 import TopRated from "./components/TopRatedMovies"
 
@@ -6,6 +7,7 @@ const Home = async () => {
     <section>
       <HeroSection />
       <TopRated />
+      <Footer />
     </section>
   )
 }
