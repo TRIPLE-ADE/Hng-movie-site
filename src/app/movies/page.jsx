@@ -1,3 +1,4 @@
+import Header from "../components/Header";
 import Movie from "../components/Movie";
 import { layout } from "../style";
 
@@ -13,18 +14,23 @@ async function getMovies () {
 const page = async () => {
     const movies = await getMovies()
   return (
-    <div className={`${layout.section}`}>
-    <div>
-        <h2 className="text-2xl font-bold">Movies</h2>
-        
-    </div>
-        
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-x-10 gap-y-20">
-        {movies.map((movie) => (
-          <Movie {...{ movie }} key={movie.id} />
-        ))}
+    <>
+      <Header />
+      <div className="bg-black h-20">
+      
       </div>
-    </div>
+      <section className={`${layout.section}`}>
+        <div>
+            <h2 className="text-2xl font-bold">Movies</h2>  
+        </div>
+            
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-x-10 gap-y-20">
+          {movies.map((movie) => (
+            <Movie {...{ movie }} key={movie.id} />
+          ))}
+        </div>
+      </section>
+    </>
   )
 }
 

@@ -1,7 +1,6 @@
 import './globals.css'
 import { DM_Sans } from 'next/font/google'
 import styles from './style'
-import Header from './components/Header'
 
 const dm_sans = DM_Sans({ 
   weight: ['400', '500', '700'],
@@ -17,7 +16,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={dm_sans.className}>
-          <Header />
           <main className={`${styles.boxWidth} min-h-screen`}>
             {children}
           </main>

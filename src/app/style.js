@@ -17,6 +17,10 @@ const styles = {
   
   export const layout = {
     section: `grid grid-col-2 sm:grid-col-4 md:grid-col-5 ${styles.paddingY} ${styles.paddingX}`,
-  };
+  }; 
+
+  export const active = {
+    activeCard: `bg-rose-100 before:content="" before:h-full before:bg-rose-600 before:w-1 before:absolute before:right-0 relative`,
+  }
   
   export default styles;
