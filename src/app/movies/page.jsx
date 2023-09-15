@@ -7,6 +7,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 async function getMovies () {
     const response = await fetch(`${baseUrl}discover/movie?api_key=${apiKey}`);
+    await new Promise(resolve => setTimeout(resolve, 1000));
     const data = await response.json();
     return data.results;
 }
