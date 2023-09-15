@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const SearchInput = ({ value, onChange, onSearch }) => {
     return (
-      <div className={`${styles.flexCol} gap-10 relative w-2/5`}>
+      <div className={`${styles.flexCol} gap-10 relative w-4/6 sm:w-2/5`}>
         <input 
           type="text" 
           value={value} 
