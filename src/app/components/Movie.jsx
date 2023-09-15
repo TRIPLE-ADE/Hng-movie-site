@@ -9,17 +9,18 @@ const Movie = ({ movie }) => {
   console.log(localDate.toString());
 
   return (
-    <Link key={id} href={`/movies/${id}`}>
+    <Link key={id} href={`/movies/${id}`} data-testid="movie-card">
       <div>
         <Image
           src={`https://image.tmdb.org/t/p/original${poster_path}`}
           alt={title}
           width={500}
           height={500}
+          data-testid="movie-poster"
         />
         <div className="flex flex-col gap-1 mt-3">
-          <p className="text-xs font-bold text-gray-400">{release_date}</p>
-          <p>{title}</p>
+          <p className="text-xs font-bold text-gray-400" data-testid="movie-release-date">{release_date}</p>
+          <p data-testid="movie-title">{title}</p>
           <div className="flex items-center justify-between gap-5">
             <MovieRating {...{ popularity }} />
           </div>

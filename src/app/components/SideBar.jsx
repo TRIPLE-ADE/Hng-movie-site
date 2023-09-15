@@ -4,7 +4,7 @@ import { active } from "../style";
 
 const SideBar = () => {
   return (
-    <aside className="fixed h-screen w-52 rounded-r-[2rem] border-dark-300 border-2">
+    <aside className="fixed h-screen w-52 rounded-r-[2rem] border-dark-300 border-2 hidden sm:block">
       <div className="flex flex-col items-center justify-between h-full py-5">
         <Image
           src="/Dark-Logo.svg"
