@@ -18,14 +18,14 @@ async function getStaticProps() {
     return data.results;
   } catch (error) {
     console.error("Error fetching top-rated movies:", error);
-    return []; 
+    throw new Error('Error fetching top-rated movies. Please try again later.'); 
   }
 }
 
 const TopRated = async () => {
   const topRatedMovies = await getStaticProps();
 
-  if (topRatedMovies.length === 0) {
+  if (!topRatedMovies) {
     return <div>Error fetching top-rated movies. Please try again later.</div>;
   }
 

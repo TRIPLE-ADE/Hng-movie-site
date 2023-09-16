@@ -15,7 +15,7 @@ async function getMoviesDetails(id) {
         return data;
     } catch (error) {
         console.error('Error fetching movie details:', error);
-        return [];
+        throw new Error('Error fetching movie details. Please try again later.');
     }
 
 }
@@ -25,7 +25,7 @@ const page = async ({ params : { id }}) => {
     const { title, overview, backdrop_path, release_date, runtime } = movieDetails;
     const localDate = new Date(release_date);
     const utcDate = new Date(localDate.toUTCString());
-    if (movieDetails.length === 0) {
+    if (!movieDetails) {
         return <div>Error fetching movie details. Please try again later.</div>;
     }
   return (
