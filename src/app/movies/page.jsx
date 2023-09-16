@@ -16,14 +16,14 @@ async function getMovies () {
         return data.results;
     } catch (error) {
         console.error('Error fetching movie details:', error);
-        return [];
+        throw new Error('Error fetching movies. Please try again later.');
     }
 
 }
 
 const page = async () => {
     const movies = await getMovies()
-    if (movies.length === 0) {
+    if (!movies) {
         return <div>Error fetching movies. Please try again later.</div>;
     }
   return (
