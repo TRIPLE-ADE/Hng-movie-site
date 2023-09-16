@@ -5,15 +5,27 @@ import { layout } from "../style";
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
-async function getMovies () {
-    const response = await fetch(`${baseUrl}discover/movie?api_key=${apiKey}`);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    const data = await response.json();
-    return data.results;
+async function getMovies () { 
+    try {
+        const response = await fetch(`${baseUrl}discover/movie?api_key=${apiKey}`);
+        if(!response.ok){
+            throw new Error('Network response was not ok');
+        }
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error('Error fetching movie details:', error);
+        return [];
+    }
+
 }
 
 const page = async () => {
     const movies = await getMovies()
+    if (movies.length === 0) {
+        return <div>Error fetching movies. Please try again later.</div>;
+    }
   return (
     <>
       <Header />

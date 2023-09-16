@@ -12,7 +12,6 @@ async function getMoviesDetails(id) {
         }
         await new Promise(resolve => setTimeout(resolve, 1000));
         const data = await response.json();
-        console.log(data)
         return data;
     } catch (error) {
         console.error('Error fetching movie details:', error);
@@ -23,9 +22,12 @@ async function getMoviesDetails(id) {
 
 const page = async ({ params : { id }}) => {
     const movieDetails = await getMoviesDetails(id)
-    const { title, overview, poster_path, backdrop_path, vote_average, vote_count, release_date, runtime, genres } = movieDetails;
+    const { title, overview, backdrop_path, release_date, runtime } = movieDetails;
     const localDate = new Date(release_date);
     const utcDate = new Date(localDate.toUTCString());
+    if (movieDetails.length === 0) {
+        return <div>Error fetching movie details. Please try again later.</div>;
+    }
   return (
     <div>
         <SideBar />
