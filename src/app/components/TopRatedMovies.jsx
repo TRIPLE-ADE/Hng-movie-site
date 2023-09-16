@@ -18,7 +18,7 @@ async function getStaticProps() {
     return data.results;
   } catch (error) {
     console.error("Error fetching top-rated movies:", error);
-    return []; // Return an empty array in case of an error
+    return []; 
   }
 }
 

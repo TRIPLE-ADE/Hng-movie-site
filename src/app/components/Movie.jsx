@@ -5,8 +5,6 @@ import MovieGenres from "./MovieGenres";
 
 const Movie = ({ movie }) => {
   const { id, title, poster_path, release_date, popularity, genre_ids } = movie;
-  const localDate = new Date(release_date);
-  console.log(localDate.toString());
 
   return (
     <Link key={id} href={`/movies/${id}`} data-testid="movie-card">
