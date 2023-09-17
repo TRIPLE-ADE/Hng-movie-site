@@ -8,7 +8,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 async function getStaticProps() {
   try {
-    const response = await fetch(`${baseUrl}movie/top_ratd?api_key=${apiKey}`);
+    const response = await fetch(`${baseUrl}movie/top_rated?api_key=${apiKey}`);
 
     if (!response.ok) {
       throw new Error("Network response was not ok");
@@ -33,9 +33,9 @@ const TopRated = async () => {
 
   return (
     <div className={`${layout.section}`}>
-      <div className="flex justify-between items-center mb-10">
+      <div className="flex items-center justify-between mb-10">
         <h2 className="text-2xl font-bold">Top Rated Movies</h2>
-        <Link href="/movies" className="hover:text-gray-500 text-rose-700 flex items-center">
+        <Link href="/movies" className="flex items-center hover:text-gray-500 text-rose-700">
           See more
           <Image src="/Chevron right.svg" width={20} height={20} alt="arrow right icon" />
         </Link>
