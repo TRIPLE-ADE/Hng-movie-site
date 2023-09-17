@@ -8,7 +8,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 async function getStaticProps() {
   try {
-    const response = await fetch(`${baseUrl}movie/top_rated?api_key=${apiKey}`);
+    const response = await fetch(`${baseUrl}movie/top_ratd?api_key=${apiKey}`);
 
     if (!response.ok) {
       throw new Error("Network response was not ok");
@@ -18,7 +18,7 @@ async function getStaticProps() {
     return data.results;
   } catch (error) {
     console.error("Error fetching top-rated movies:", error);
-    throw new Error('Error fetching top-rated movies. Please try again later.'); 
+    // throw new Error('Error fetching top-rated movies. Please try again later.'); 
   }
 }
 
