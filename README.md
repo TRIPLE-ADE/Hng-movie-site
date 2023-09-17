@@ -21,7 +21,7 @@ To get started with this project, follow these steps:
 
 ## Emvironments Variables
 Create a .env.local file in the root directory of the project with the following content:
-    ```bash
+
     NEXT_PUBLIC_API_KEY='your-api-key'
     NEXT_PUBLIC_BASE_URL='https://api.themoviedb.org/3/'
 
